@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <style>
+    footer{
+        background-color: blue;
+        width: auto;
+        height: auto;
+        margin-left: -15px;
+        padding: 20px;
+      
+      }
+      
+      footer ul li{
+          text-decoration: none;
+          display: inline;
+          
+      }
+      
+      footer ul li a{
+          color: white;
+          display: inline-flex;
+          margin-left: 15px;
+          padding: 2px;
+      }
+      footer ul li a:hover{
+          color: blue;
+          text-decoration: none;
+          background-color: white;
+          border-radius: 10px;
+          transition: 0.5s;
+      }
+      
+      footer p{
+          color: white;
+          padding: 50px;
+          text-align: center;
+      
+      }
+  </style>
+</head>
+
+<footer>
+    <p class='alert alert-success' style="background-color: blue; color: white; font-weight:bold;
+  border: none; margin: 0;">Send Us Your Valuable Feedback !</p>
+  <p id="current-datetime">Reach out to one of our customer service personel to attend to you.</p>
+  <div>
+      <ul>
+          <li><a href="tel:+256772615135">CallUs</a></li>
+          <li><a href="https://wa.me/+256772615135" target="_blank">Whatsapp</a></li>
+          <li><a href="https://www.facebook.com/jay.oabs" target="_blank">Facebook</a></li>
+          <li><a href="https://www.instagram.com/aaronelegant" target="_blank">Instagram</a></li>
+          <li><a href="#">Tiktok</a></li>
+          <li><a href="mailto:jayoabs72@gmail.com" target="_blank">Email</a></li>
+          <li><a href="https://t.me/jayoabs" target="_blank">Telegram</a></li>    
+      </ul>
+  </div>
+</footer>
+
+<script>
+            //updating the date and time
+            function updateTime() {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = now.getMonth() + 1; // Months are zero-indexed (January = 0)
+                const day = now.getDate();
+                const hours = now.getHours().toString().padStart(2, '0'); // Add leading zero for single-digit hours
+                const minutes = now.getMinutes().toString().padStart(2, '0'); // Add leading zero for single-digit minutes
+                const seconds = now.getSeconds().toString().padStart(2, '0'); // Add leading zero for single-digit seconds
+    
+                const formattedTime = `${year}-${month.toString().padStart(2, '0')}-${day} ${hours}:${minutes}:${seconds}`;
+                document.getElementById("current-datetime").textContent = formattedTime;
+            }
+    
+            // Update the time initially and then every second
+            updateTime();
+            setInterval(updateTime, 1000); // Update every 1 second
+</script>
+</html>
